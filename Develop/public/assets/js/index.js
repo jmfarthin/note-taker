@@ -26,16 +26,12 @@ const hide = (elem) => {
 let activeNote = {};
 
 const getNotes = () =>
-  fetch('/notes', {
+  fetch('/api/notes', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
     },
-  }).then((response) => response.json())
-    .then((data) => data)
-    .catch((error) => {
-      console.error('Error:', error);
-    });
+  });
 
 const saveNote = (note) =>
   fetch('/api/notes', {
@@ -108,6 +104,7 @@ const handleNoteView = (e) => {
 
 // Sets the activeNote to and empty object and allows the user to enter a new note
 const handleNewNoteView = (e) => {
+  console.log("should be working")
   activeNote = {};
   renderActiveNote();
 };
@@ -164,7 +161,12 @@ const renderNoteList = async (notes) => {
 
   jsonNotes.forEach((note) => {
     const li = createLi(note.title);
+    console.log("about to stringify the note")
+    console.log(note)
+    console.log(li)
     li.dataset.note = JSON.stringify(note);
+    console.log("This is what it's like stringifiyed")
+    console.log(JSON.stringify(note))
 
     noteListItems.push(li);
   });
