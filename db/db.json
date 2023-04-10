@@ -8,5 +8,10 @@
         "title": "Route reminder",
         "text": "Remember that the path syntax is very important when setting a route; an improper path that looks right will give you an error. Double check to make sure you have not forgotten any leading slashes a colon before a query.",
         "id": "3ywaea5e5g7u52ywmjgv"
+    },
+    {
+        "title": "Test note",
+        "text": "Testing note saving ability",
+        "id": "jwtyug3aflyecdh1hrz3"
     }
 ]
