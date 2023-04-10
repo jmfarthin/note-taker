@@ -31,7 +31,7 @@ app.get('/notes', (req, res) =>
 );
 
 app.get('/api/notes', async (req, res) => {
-    var notes = await readCurrentDB()
+    let notes = await readCurrentDB()
     res.json(notes)
 });
 
@@ -41,12 +41,12 @@ app.post('/api/notes', async (req, res) => {
         res.json({ error: "You must include valid fields" })
         return
     }
-    var newNote = {
+    let newNote = {
         title,
         text,
         id: generateUniqueId()
     }
-    var currentNotes = await readCurrentDB()
+    let currentNotes = await readCurrentDB()
     console.log(currentNotes);
     currentNotes.push(newNote)
     //write to file the stringiifyed version of my currentNotes
@@ -54,11 +54,16 @@ app.post('/api/notes', async (req, res) => {
     res.json({ message: "Processing your post" })
 });
 
-app.delete('api/notes/:id', async (req, res) => {
-    const { id } = req.body;
+app.delete('/api/notes/:id', async (req, res) => {
+    const { id } = req.params;
+    console.log(id);
     if (!id) {
         res.json({ error: "Cannot complete request without object id." })
     }
+    let currentNotes = await readCurrentDB();
+    const filteredNotes = currentNotes.filter(note => note.id != id);
+    writeNewDB(filteredNotes);
+    res.json({ message: "Processing deletion." })
 })
 
 app.listen('3000', (req, res) => console.log(`Listening at PORT ${PORT}.`));

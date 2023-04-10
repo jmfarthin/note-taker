@@ -1,12 +1,12 @@
 [
     {
-        "title": "Second note",
-        "text": "Testing testing",
-        "id": "nwacw7vxjqfz6p8o7yvp"
+        "title": "Here's another note",
+        "text": "This better be good.",
+        "id": "5f2m2hmyi46ah7qjrq2u"
     },
     {
-        "title": "third note",
-        "text": "heres the third note",
-        "id": "use0rymbftlt8vqq9yoe"
+        "title": "Route reminder",
+        "text": "Remember that the path syntax is very important when setting a route; an improper path that looks right will give you an error. Double check to make sure you have not forgotten any leading slashes a colon before a query.",
+        "id": "3ywaea5e5g7u52ywmjgv"
     }
 ]
