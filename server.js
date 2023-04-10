@@ -66,4 +66,4 @@ app.delete('/api/notes/:id', async (req, res) => {
     res.json({ message: "Processing deletion." })
 })
 
-app.listen('3000', (req, res) => console.log(`Listening at PORT ${PORT}.`));
+app.listen(PORT, (req, res) => console.log(`Listening at PORT ${PORT}.`));
