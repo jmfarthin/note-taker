@@ -49,7 +49,7 @@ app.post('/api/notes', async (req, res) => {
     let currentNotes = await readCurrentDB()
     console.log(currentNotes);
     currentNotes.push(newNote)
-    //write to file the stringiifyed version of my currentNotes
+   
     writeNewDB(currentNotes);
     res.json({ message: "Processing your post" })
 });
